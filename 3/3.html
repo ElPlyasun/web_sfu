@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form</title>
+  <link rel="stylesheet" href="normalize.css">
+  <link rel="stylesheet" href="style3.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Форма для соискателя вакансии на должность разработчика С++</h1>
+
+    <form>
+      <div class="form-group">
+        <label for="name">ФИО:</label>
+        <input type="text" id="name" name="name">
+      </div>
+
+      <div class="form-group">
+        <label for="ed">Образование:</label>
+        <select id="ed" name="ed">
+        <option value="middle">Среднее</option>
+        <option value="prehigh">Неоконченное высшее (студент)</option>
+        <option value="high">Высшее</option>
+        <option value="other">Другое</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Почта:</label>
+        <input type="email" id="email" name="email">
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Телефон:</label>
+        <input type="tel" id="phone" name="phone">
+      </div>
+
+      <div class="form-group">
+        <label for="position">Должность:</label>
+        <select id="position" name="position">
+        <option value="intern">Стажер</option>
+        <option value="junior">Junior</option>
+        <option value="middle">Middle</option>
+        <option value="senior">Senior</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="experience">Опыт работы:</label>
+        <input type="number" id="experience" name="experience" min="0">
+      </div>
+
+      <div class="form-group">
+        <label for="letter">О себе:</label>
+        <textarea id="letter" name="letter" rows="5"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="resume">Резюме:</label>
+        <input type="file" id="resume" name="resume">
+      </div>
+
+      <div class="form-group">
+        <label for="agree_terms">Я согласен(на) с условиями пользовательского соглашения</label>
+        <input type="checkbox" id="agree_terms" name="agree_terms">
+      </div>
+
+      <input type="submit" value="Отправить">
+    </form>
+  </div>
+</body>
+</html>

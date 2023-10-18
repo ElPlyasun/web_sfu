@@ -1,0 +1,44 @@
+html {
+  background-color: #dcd7f4;
+}
+body {
+  font-family: Arial, sans-serif;
+  color: #140e2d;
+    }
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.form-group {
+  margin-bottom: 10px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  border: 1px solid #050109;
+}
+
+input[type="submit"] {
+  background-color: #19152e;
+  color: white;
+}
+
+@media only screen and (max-width: 600px) {
+  label {
+    display: none;
+  }
+}
