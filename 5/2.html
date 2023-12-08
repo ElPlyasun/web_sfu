@@ -1,0 +1,57 @@
+<html>
+<head>
+<title>JS 2</title>
+</head>
+<body>
+<h2>Введите массив чисел через запятую:</h2>
+<input type="text" id="inputArray" placeholder="Пример: 1, 2, 3, 4, 5">
+<button onclick="calculateSum()">Вывести результат</button>
+<p id="result"></p>
+<p id="result2"></p>
+
+<script>
+    function calculateSum() {
+        var inputArray = document.getElementById('inputArray').value;
+
+        var numbers = inputArray.split(',').map(function(item) {
+            return parseFloat(item.trim());
+            });
+
+        var lastNegativeIndex = -1;
+        for (var i = numbers.length - 1; i >= 0; i--) {
+            if (Math.sin(numbers[i]) < 0) {
+            lastNegativeIndex = i;
+            break;
+            }
+        }
+
+        var sum = 0;
+        for (var j = lastNegativeIndex + 1; j < numbers.length; j++) {
+            sum += numbers[j];
+        }
+
+        document.getElementById('result').innerText = 'Сумма элементов от последнего отрицательного синуса: ' + sum;
+
+        numbers = numbers.filter(function(item) {
+            var integerPart = Math.abs(Math.trunc(item));
+            return !Prime(integerPart);
+            });
+
+        document.getElementById('result2').innerText = 'Отфильтрованный массив (удалены простые числа по модулю): ' + numbers.join(', ');
+    }
+
+    function Prime(number) {
+        if (number <= 1) {
+            return false;
+        }
+        for (var i = 2; i <= Math.sqrt(number); i++) {
+            if (number % i === 0) {
+            return false;
+            }
+        }
+        return true;
+    }
+</script>
+
+</body>
+</html>

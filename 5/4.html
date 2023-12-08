@@ -1,0 +1,26 @@
+<html>
+<head>
+  <title>JS 4</title>
+</head>
+<body>
+
+  <h1>Названия папок, которые входят в заданный путь</h1>
+  <p>Путь файла: C:/Users/dns/Desktop/СФУ/2 курс/Проектирование/5/4.html</p>
+  <p id="result"></p>
+
+  <script>
+    // Получаем полный путь к файлу
+    var fullPath = "C:/Users/dns/Desktop/СФУ/2 курс/Проектирование/5/4.html";
+
+    // Разделяем путь на массив по разделителю "/"
+    var folders = fullPath.split("/");
+
+    // Удаляем последний элемент (имя файла)
+    folders.pop();
+
+    // Выводим названия папок
+    document.getElementById("result").innerHTML = "Папки: " + folders.join(", ");
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<html>
+<head>
+  <title>Расчет долга</title>
+  <script>
+    function calculateYears() {
+      var loanAmount = parseFloat(document.getElementById("loanAmount").value);
+      var targetAmount = parseFloat(document.getElementById("targetAmount").value);
+      var annualInterestRate = 20;
+
+      var debt = loanAmount;
+      var years = 0;
+
+      while (debt < targetAmount) {
+        var interest = (debt * annualInterestRate) / 100;
+        debt += interest;
+        years++;
+      }
+
+      document.getElementById("result").innerText = "Учитывая, что ставка по кредиту - 20%, долг превысит " + targetAmount + " тысяч рублей через " + years + " лет.";
+    }
+  </script>
+</head>
+<body>
+  <h1>Расчет долга</h1>
+
+  <label for="loanAmount">Сумма ссуды (тысячи рублей):</label>
+  <input type="number" id="loanAmount"><br>
+
+  <label for="targetAmount">Требуемая сумма (тысячи рублей):</label>
+  <input type="number" id="targetAmount"><br>
+
+  <button onclick="calculateYears()">Рассчитать</button>
+
+  <div id="result"></div>
+</body>
+</html>
