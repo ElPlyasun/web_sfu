@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form</title>
+  <link rel="stylesheet" href="normalize.css">
+  <link rel="stylesheet" href="style3.css">
+  <script>
+    window.onload = function() {
+      document.querySelector("form").onsubmit = function(event) {
+        event.preventDefault(); 
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        if (!name || !email) {
+          alert("Пожалуйста, заполните обязательные поля: ФИО и Почта");
+          return;
+        }
+        const phone = document.getElementById("phone").value;
+        const experience = document.getElementById("experience").value;
+        if (phone && !/^\+\d{1,3}\d{3,14}$/.test(phone)) {
+          alert("Пожалуйста, введите корректный номер телефона");
+          return;
+        }
+        if (experience && isNaN(experience)) {
+          alert("Пожалуйста, введите корректное значение опыта работы");
+          return;
+        }
+
+        alert("Данные успешно отправлены:\n\nФИО: " + name + "\nПочта: " + email);
+        
+        // Очистка полей формы
+        this.reset();
+      };
+    };
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h1>Форма для соискателя вакансии на должность разработчика С++</h1>
+
+    <form>
+      <div class="form-group">
+        <label for="name">ФИО:</label>
+        <div class="form-control">
+          <input type="text" id="name" name="name">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="ed">Образование:</label>
+        <select id="ed" name="ed">
+        <option value="middle">Среднее</option>
+        <option value="prehigh">Неоконченное высшее (студент)</option>
+        <option value="high">Высшее</option>
+        <option value="other">Другое</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Почта:</label>
+        <div class="form-control">
+        <input type="email" id="email" name="email">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Телефон:</label>
+        <div class="form-control">
+        <input type="tel" id="phone" name="phone"></div>
+      </div>
+
+      <div class="form-group">
+        <label for="position">Должность:</label>
+        <select id="position" name="position">
+        <option value="intern">Стажер</option>
+        <option value="junior">Junior</option>
+        <option value="middle">Middle</option>
+        <option value="senior">Senior</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="experience">Опыт работы:</label>
+        <input type="number" id="experience" name="experience" min="0">
+      </div>
+
+      <div class="form-group">
+        <label for="letter">О себе:</label>
+        <textarea id="letter" name="letter" rows="5"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="resume">Резюме:</label>
+        <input type="file" id="resume" name="resume">
+      </div>
+
+      <div class="form-group">
+        <label for="agree_terms">Я согласен(на) с условиями пользовательского соглашения</label>
+        <input type="checkbox" id="agree_terms" name="agree_terms">
+      </div>
+
+      <input type="submit" value="Отправить">
+    </form>
+  </div>
+</body>
+</html>
