@@ -1,0 +1,24 @@
+/* styles_edit_recipe.css */
+/* Include common styles from styles_recipe.css */
+@import url('recipe.css');
+
+/* Additional styles specific to edit_recipe.php */
+.container {
+    background-color: #fdfdfd;
+}
+
+h2 {
+    color: #4285f4;
+}
+
+label {
+    color: #555;
+}
+
+button {
+    background-color: #4285f4;
+}
+
+button:hover {
+    background-color: #3c75d3;
+}

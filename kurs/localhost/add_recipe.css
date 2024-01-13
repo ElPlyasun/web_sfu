@@ -1,0 +1,23 @@
+
+@import url('recipe.css');
+
+.container {
+    background-color: #fdfdfd;
+
+}
+
+h2 {
+    color: #4285f4;
+}
+
+label {
+    color: #555;
+}
+
+button {
+    background-color: #4285f4;
+}
+
+button:hover {
+    background-color: #3c75d3;
+}
